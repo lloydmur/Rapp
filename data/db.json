@@ -1,0 +1,17 @@
+{
+    "posts": [
+        {
+            "title": "I like corn",
+            "content": "Corn is good",
+            "author": "Cornelius",
+            "id": 0
+        },
+        {
+            "title": "I don't like corn",
+            "content": "Corn must DIE",
+            "author": "Pepperanne",
+            "id": 1
+        }
+    ]
+
+}

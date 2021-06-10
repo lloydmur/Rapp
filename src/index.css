@@ -11,3 +11,46 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+.navbar {
+  font-family: 'Teko';
+  font-size: 24px;
+  background-color: gray;
+  justify-content: space-between;
+}
+.navbar-brand img {
+  margin-right: 4px;
+}
+a.nav-link {
+  color: white;
+  
+}
+a.nav-link:hover {
+  padding: 0.5rem;
+  color: gray;
+}
+.navbar-item {
+  font-family: 'Teko';
+  font-style: normal;
+  font-size: 24px;
+  text-align: center;
+  color: white;
+  display: inline;
+  max-width: initial;
+  max-block-size: initial;
+  margin-right: 4px;
+  padding-right: 4px;
+}
+h1.title {
+  margin-bottom: 1em;
+}
+.post-preview {
+  border-radius: 8px;
+  font-size: small;
+  padding: 12px;
+  margin: 4px;
+  color: black;
+  background: linear-gradient( darkgray, gray);
+}
+.post-preview:hover {
+  background: linear-gradient( gray, darkgray);
+}

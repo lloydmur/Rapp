@@ -1,24 +1,35 @@
-import logo from './logo.svg';
 import './App.css';
+import Navbar from './components/navbar';
+import Home from './views/home';
+import NewPost from './components/newPost'
+import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
+
+//Router component allows use of routing/
+//switch allows switching of routes
+//Route are nested in switches and are basically the component you want to switch to
+
+//router links allow browser to handle rout requests
+
 
 function App() {
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router> 
+      <div className="App">
+        <Navbar/>
+        <header className="App-header">
+          <Switch>
+            <Route path="/">
+              <Home/>
+            </Route>
+            <Route exact path="/new-post">
+              <NewPost/>
+            </Route>
+          </Switch>
+        </header>
+      </div>
+    </Router>
+    
   );
 }
 
