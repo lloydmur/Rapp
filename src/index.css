@@ -15,15 +15,14 @@ code {
   font-family: 'Teko';
   font-size: 24px;
   background-color: gray;
+  align-items: center;
   justify-content: space-between;
-}
-.navbar-brand img {
-  margin-right: 4px;
 }
 a.nav-link {
   color: white;
   
 }
+
 a.nav-link:hover {
   padding: 0.5rem;
   color: gray;
@@ -37,8 +36,15 @@ a.nav-link:hover {
   display: inline;
   max-width: initial;
   max-block-size: initial;
-  margin-right: 4px;
-  padding-right: 4px;
+  padding: 0.5rem;
+}
+#basic-nav-dropdown{
+  padding: 0.5rem;
+  white-space: normal;
+}
+#clock{
+  position: relative;
+  left: 32px; 
 }
 h1.title {
   margin-bottom: 1em;

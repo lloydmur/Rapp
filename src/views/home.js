@@ -1,5 +1,3 @@
-import {useState , useEffect} from 'react';
-
 import PostList from '../components/PostList';
 //import logo from '../logo.svg';
 

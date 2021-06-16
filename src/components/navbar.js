@@ -1,7 +1,9 @@
 import React from 'react'
 import Navbar from 'react-bootstrap/Navbar';
-import Nav from 'react-bootstrap/Nav';
+import NavDropdown from 'react-bootstrap/NavDropdown';
 import {useState, useEffect} from 'react'
+import { Link } from 'react-router-dom';
+//link tag will allow react to handle routing instead of server. uses "to" instead of "<href></href>"
 
 // using parenthesis automatically invoke function in JSX
 //use anonymous functions instead 
@@ -16,28 +18,43 @@ const Navigation = (props) => {
     user = activeUser;
   }
   return(
-    <Navbar bg= "dark" variant="dark">
-    <Navbar.Brand href="/">
-      <img
-        alt=""
-        src="favicon.ico"
-        width="30"
-        height="30"
-        className="d-inline-block align-top"
-      />{'Rapp'}
+    <div>
+      <Navbar bg= "dark" variant="dark">
+        <Navbar.Brand href="/">
+          <img
+            alt=""
+            src="favicon.ico"
+            width="30"
+            height="30"
+            className="d-inline-block align-top"
+          />{'Rapp'}
 
-    </Navbar.Brand>
-    <div className="links">
-      {
-      <Nav.Item>
-        <p className="navbar-item">
-          Welcome {user}!  
-        </p>
-      </Nav.Item>
-      }
+        </Navbar.Brand>
+        <div className="navbar-item" id='clock'></div>
+        <NavDropdown title={`Welcome ${user}`} id="basic-nav-dropdown">
+          {!activeUser && <div>
+            <Link to="/signup">
+              <NavDropdown.Item>Sign up</NavDropdown.Item>
+            </Link>
+            <Link to="/signin">
+              <NavDropdown.Item>Sign in</NavDropdown.Item>
+            </Link>
+            
+          </div>
+            
+          } 
+          {activeUser && <div>
+            <NavDropdown.Item>Profile</NavDropdown.Item>
+            <NavDropdown.Item>New Post</NavDropdown.Item>
+            <NavDropdown.Item>Settings</NavDropdown.Item>
+            <NavDropdown.Divider />
+            <NavDropdown.Item>Sign out</NavDropdown.Item>
+          </div>}
+          
+      </NavDropdown>
+      </Navbar>
     </div>
-    <div className="navbar-item" id='clock'></div>
-  </Navbar>
+    
   );
   
 }

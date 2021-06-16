@@ -8,7 +8,9 @@ const useFetch = (targetURL) => {
     //useEffect(function, dependecies)
     //use effect is called on initial render or when a value in dependencies changes since last render
     useEffect(() => {
-        fetch(targetURL)
+        //abort controllers can stop fetch request
+        const abortController = new AbortController();
+        fetch(targetURL, {signal: abortController.signal})
             .then(res => {
                 if(!res.ok){
                     throw Error('Could not fetch resource');
@@ -21,11 +23,20 @@ const useFetch = (targetURL) => {
                 setData(data);
             })
             .catch((err) => {
-                setError(err.message);
+                if(err.name === 'AbortError'){
+                    console.log('Fetch Aborted!');
+                }
+                else{
+                    setError(err.message);
+                }
             })
+            return () => {
+                abortController.abort();
+            };
+            
     }, [targetURL])
     
-    return data;
+    return {data, error};
 }
 
 export default useFetch;
