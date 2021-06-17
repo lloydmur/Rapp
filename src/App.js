@@ -3,7 +3,9 @@ import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
 
 import Navbar from './components/navbar';
 import Home from './views/home';
-import NewPost from './components/newPost'
+import Signup from './views/signup';
+import Signin from './views/signin'
+import NewPost from './components/newPost';
 import PostDetails from './components/PostDetails';
 
 //Router component allows use of routing/
@@ -23,6 +25,12 @@ function App() {
           <Switch>
             <Route exact path="/">
               <Home/>
+            </Route>
+            <Route exact path="/signup">
+              <Signup/>
+            </Route>
+            <Route exact path="/signin">
+              <Signin/>
             </Route>
             <Route path="/new-post">
               <NewPost/>

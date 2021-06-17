@@ -12,7 +12,7 @@ const PostDetails = () => {
             {!post && <p>There seems to be nothing here :)</p>}
             {post && (<div className="post">
                 <h2>{post.title}</h2>
-                <p>By, {post.author}</p>
+                <p id="author">By, {post.author}</p>
                 <div>
                     {post.content}
                 </div>
