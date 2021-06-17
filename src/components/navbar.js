@@ -33,11 +33,11 @@ const Navigation = (props) => {
         <div className="navbar-item" id='clock'></div>
         <NavDropdown title={`Welcome ${user}`} id="basic-nav-dropdown">
           {!activeUser && <div>
-            <Link to={"/signup"}>
-              <NavDropdown.Item href="/signup">Sign up</NavDropdown.Item>
+            <Link className="dropdown-item" to={`/signup`}>
+              Sign up
             </Link>
-            <Link to={"/signin"}>
-              <NavDropdown.Item href="/signin">Sign in</NavDropdown.Item>
+            <Link className="dropdown-item" to={"/signin"}>
+              Sign in
             </Link>
             
           </div>
