@@ -78,8 +78,12 @@ h1.title {
   padding: 12px;
   margin: 4px;
   color: black;
-  background: linear-gradient( darkgray, gray);
+  background: linear-gradient( rgb(158, 158, 158), rgb(163, 163, 163));
+}
+.post-preview a{
+  text-decoration: none;
+  color: rgb(59, 59, 59);
 }
 .post-preview:hover {
-  background: linear-gradient( gray, darkgray);
+  background: linear-gradient(  rgb(172, 172, 172), rgb(192, 192, 192));
 }

@@ -1,11 +1,15 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
 import useFetch from '../hooks/useFetch';
+
+import Button from 'react-bootstrap/Button';
 //props are passed into a component from outside similarly to route params
 
-const PostList = () => {
+const PostList = (props) => {
     const {data, error} = useFetch('http://localhost:4000/posts');
     const posts = data;
+    //const activeUser = props.activeUser;
+    const activeUser = 'Cornelius';
     let content;
     if(posts == null){
         content = <p>Loading...</p>
@@ -23,9 +27,12 @@ const PostList = () => {
                 </Link>
                 
                 <p>By, {post.author}</p>
-                <button>
-                    Delete
-                </button>
+                {(activeUser == post.author) &&
+                    <Button variant="danger">
+                        Delete
+                    </Button>
+                }
+                
             </div>
             ))}
         </div> 
