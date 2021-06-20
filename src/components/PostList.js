@@ -8,8 +8,7 @@ import Button from 'react-bootstrap/Button';
 const PostList = (props) => {
     const {data, error} = useFetch('http://localhost:4000/posts');
     const posts = data;
-    //const activeUser = props.activeUser;
-    const activeUser = 'Cornelius';
+
     let content;
     if(posts == null){
         content = <p>Loading...</p>
@@ -27,11 +26,6 @@ const PostList = (props) => {
                 </Link>
                 
                 <p>By, {post.author}</p>
-                {(activeUser == post.author) &&
-                    <Button variant="danger">
-                        Delete
-                    </Button>
-                }
                 
             </div>
             ))}

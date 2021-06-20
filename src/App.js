@@ -1,11 +1,12 @@
 import './App.css';
 import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
 
-import Navbar from './components/navbar';
+import NotFound from './views/404.js';
 import Home from './views/home';
 import Signup from './views/signup';
 import Signin from './views/signin'
 import NewPost from './components/newPost';
+import Navbar from './components/navbar';
 import PostDetails from './components/PostDetails';
 
 //Router component allows use of routing/
@@ -37,6 +38,9 @@ function App() {
             </Route>
             <Route path="/post/:id">
               <PostDetails/>
+            </Route>
+            <Route path="">
+              <NotFound/>
             </Route>
           </Switch>
         </header>
